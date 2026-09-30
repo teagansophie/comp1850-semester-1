@@ -8,3 +8,6 @@ __hello__
 
 heading 1 
 ==============
+
+~~mistake~~
+this is <ins>underlined</ins> text
