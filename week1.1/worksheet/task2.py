@@ -1,14 +1,20 @@
 """
 Portfolio Task - Week 1
 By submitting this code you are declaring that all work in this file, other than any provided template code, was written and developed by you independently.
-Name: 
+Name: Teagan Liddle
 """
 
 name = input("What is your name? ")
 print(f"Welcome to LeedsBank's savings calculator {name}!")
 
 # Ask the user to input an amount they want to save every month - this should be an integer.
-# Validate that they have entered an integer.
+try:
+    month_saving = input("How much money would you like to save every month?")
+except:# Validate that they have entered an integer.
+    print("Please enter a valid integer.")
+    
+
+
 
 
 # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
