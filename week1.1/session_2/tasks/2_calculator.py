@@ -2,12 +2,13 @@
 
 # ask the user to enter number1:
 
+num1 = int(input("Please enter the first number: "))
 
 # ask the user to enter number 2:
-
+num2 = int(input("Please enter the second number: "))
 
 # calculate the result of adding those numbers together
-
-
+total = num1 + num2
 # print out the answer
 
+print(total)

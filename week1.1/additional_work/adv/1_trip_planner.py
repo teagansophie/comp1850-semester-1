@@ -4,12 +4,20 @@
 - Display a human-readable summary that includes the destination and the speed formatted to two decimal places.
 - Extension: warn if either numeric value is zero or negative.
 """
+try:
+    destination = input("Where are you going to? ")
 
-destination = input("Where are you going to? ")
+    distance_miles_input = int(input("How many miles will you travel? "))
+    time_hours_input = int(input("How many hours will the journey take? "))
+    
+    if distance_miles_input <= 0 or time_hours_input <= 0:
+        print("Warning: Distance and time must be positive values.")
+    else:
+        average_speed = distance_miles_input / time_hours_input
+        print(f"The average speed was {average_speed} mph")  
 
-distance_miles_input = input("How many miles will you travel? ")
-time_hours_input = input("How many hours will the journey take? ")
-
+except: 
+    print("Please enter valid numbers for distance and time.")
 # TODO: convert distance_miles_input and time_hours_input to numbers
 # TODO: calculate the average speed in miles per hour
 # TODO: print a summary message using an f-string
