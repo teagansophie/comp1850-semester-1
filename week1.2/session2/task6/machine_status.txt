@@ -1,0 +1,1 @@
+Machine Temperature: 30CMachine Pressure: 70 PSIMachine Status: Operational
