@@ -4,7 +4,14 @@ i = 0
 
 while i < 20:
     i = i + 1
+    multiple_of_three = i % 3 == 0
+
+    if multiple_of_three:
+        continue
+    
+
     print(i)
+
 
 # Add logic using continue so that multiples of 3 are not printed out
 # Hint: we discused operators such as % and // in recent weeks
