@@ -15,3 +15,11 @@
 # story.txt - 290
 # story2.txt - 326
 # glasses.txt - 210
+
+with open("story.txt", "r") as infile:
+    text = infile.read()
+
+
+words = text.split()
+word_count = len(words)
+print(f"Word count: {word_count}")
