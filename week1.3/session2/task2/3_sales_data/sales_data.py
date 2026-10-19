@@ -8,11 +8,17 @@
 #   - average sale amount
 #   - the widget which has been sold the most
 # and print these out in a nice, human-readable format
-
+largest_sale = 0
+average_sale_amount = 0
 with open("sales.csv", "r") as infile:
     sales_data = infile.readlines()
-    for line in sales_data:
-        print(line.strip())
+    sales_data = [line.strip().split(",")for line in sales_data]
+    # find largest sale day
+    if sales_data == "":
+        print("no data in file")
+
+      
+
         
 # additional: you can calculate other sales statistics such as:
 # - total sales for each region
