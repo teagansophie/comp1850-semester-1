@@ -40,16 +40,16 @@ def run_program():
 
     match operation:
         case 1:
-            result = None    # complete this line of code
+            result = addition(num1, num2)    # complete this line of code
             print(f"The result of addition is: {result}")
         case 2:
-            result = None    # complete this line of code
+            result = subtraction(num1, num2)    # complete this line of code
             print(f"The result of subtraction is: {result}")
         case 3:
-            result = None   # complete this line of code
+            result = multiplication(num1, num2)   # complete this line of code
             print(f"The result of multiplication is: {result}")
         case 4:
-            result = None    # complete this line of code
+            result = division(num1, num2)    # complete this line of code
             print(f"The result of division is: {result}")
         case _:
             print("Undefined operation")
@@ -59,9 +59,9 @@ run_program()
 
 
 # In the function run_program, they are more than one tasks involved:
-#   (1) getting user input for numbers
-#   (2) ask user for desired operation
-#   (3) match operation.
+#   (1) getting user input for numbers - def user_input()
+#   (2) ask user for desired operation - def operation_input()
+#   (3) match operation. - def perform_operation()
 
 #    If you are to split each task into a separate function, how would you
 #   name the function for each of these tasks?

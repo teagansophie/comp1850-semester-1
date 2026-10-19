@@ -11,6 +11,7 @@
 # function implementation
 
 def mystery_func(string):
+    """Returning the number of uppercase and lowercase letters in a string."""
     upper = 0
     lower = 0
 
