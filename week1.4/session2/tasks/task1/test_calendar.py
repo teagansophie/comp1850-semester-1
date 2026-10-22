@@ -12,7 +12,7 @@ import calendar
 
 print(calendar.month(2025, 10))
 
-# Your task is to go to https://docs.python.org/3/library/calendar.html,
+# Your task is to go to https://docs.python.ordef g/3/library/calendar.html,
 # and have a look at other optional arguments for the month function,
 # namely the w and l parameters. Write code to made two more function calls
 # to the month function with different values of w and l and observe the

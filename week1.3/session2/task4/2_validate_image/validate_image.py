@@ -16,3 +16,5 @@
 #  Print `Invalid width` if the widths are different
 #  Print `Invalid height` if the heights are different
 #  Print `Invalid pixel values` if any pixel values is less than 0 and greater than the maximum gray value
+
+with open()
