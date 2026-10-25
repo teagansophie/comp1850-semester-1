@@ -17,4 +17,37 @@
 #  Print `Invalid height` if the heights are different
 #  Print `Invalid pixel values` if any pixel values is less than 0 and greater than the maximum gray value
 
-with open()
+specified_height = int(input("Enter specified height:"))
+specified_pixles = int(input("Enter pixles:"))
+specified_width = int(input("Enter width:"))
+
+with open("images/feep.pgm", "r") as infile:
+    valid_lines = [] # list of valid information excluding comments and whitespaces
+
+    for lines in infile:
+        line = line.strip() # splits lines up
+
+        if line!= " " and not line.startswith("#"):
+            valid_lines.append(line)
+        
+        #need to split up width and height as they are stores together 
+        dimensions = valid_lines[1].split()
+        width = int(dimensions[0])
+        height = int(dimensions[1])
+        pixel_rows = valid_lines[3:]
+
+        image_dimensions = width*height 
+
+        #max gray value is read from 3rd line without comments
+        max_gray = int(valid_lines[2])
+
+        if len(pixel_rows) != specified_pixles: 
+            print("invalid height")
+        elif width != specified_width:
+            print("Invalid witdh")
+
+        elif height != specified_height:
+            print("Inavlid height")
+        else:
+            print("Valid image")
+
