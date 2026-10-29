@@ -10,14 +10,22 @@ class Point:
     A point in 2D space.
     """
 
-    def __init__(self, x, y):
+    def __init__(self, x:float, y:float):
         """
         Creates a Point, given x & y coordinates.
         """
         self.x = x
         self.y = y
 
-    def distance(self):
+        if not isinstance(x,float):
+            raise TypeError("x should be real num")
+
+        if not isinstance(y,float):
+            raise TypeError("y should be real num")
+
+
+    def distance(self) -> float:
+        # expect is to return a float
         """
         Returns distance of this Point from the origin.
         """

@@ -9,7 +9,11 @@
     Name: Teagan Liddle
 """
 
+
 def currency_converter(amount, from_currency, to_currency):
+    """
+    Takes in an amount and converts into a different currency
+    """
 
     conversion_rate = {
         'GBP': {'CNY': 9.24, 'PHP': 75.00, 'INR': 109.06},
@@ -17,58 +21,17 @@ def currency_converter(amount, from_currency, to_currency):
         'PHP': {'CNY': 0.12, 'GBP': 0.01, 'INR': 1.45},
         'INR': {'PHP': 0.69, 'CNY': 0.09, 'GBP': 0.01}
     }
-    if from_currency == "GBP" and to_currency == "CNY":
-        GBP_to_CNY = round(conversion_rate["GBP"]["CNY"],2)
-        print(f"Conversion: {GBP_to_CNY * amount}")
+    if amount < 0:
+        return 0.0
+    # if the currency is the same, no conversion rate. round to 2dp
 
-    elif from_currency == "GBP" and to_currency == "PHP":
-        GBP_to_PHP = round(conversion_rate["GBP"]["PHP"],2)
-        print(f"Conversion:{GBP_to_PHP * amount}")
+    if from_currency == to_currency:
+        return round(float(amount), 2)
 
-    elif from_currency == "GBP" and to_currency == "INR":
-        GBP_to_INR = round(conversion_rate["GBP"]["INR"])
-        print(f"Conversion:{GBP_to_INR * amount}")
+    # using the dictionary, search for conversion rate
 
-    elif from_currency == "CNY" and to_currency == "GBP":
-        CNY_to_GBP = round(conversion_rate["CNY"]["GBP"],2)
-        print(f"Conversion:{CNY_to_GBP * amount}")
+    rate = conversion_rate[from_currency][to_currency]
 
-    elif from_currency == "CNY" and to_currency == "PHP":
-        CNY_to_PHP = round(conversion_rate["CNY"]["PHP"])
-        print(f"Conversion:{CNY_to_PHP * amount}")
+    converted_amount = amount * rate
 
-    elif from_currency == "CNY" and to_currency == "INR":
-        CNY_to_INR = round(conversion_rate["CNY"]["INR"])
-        print(f"Conversion:{CNY_to_INR * amount}")
-
-    
-    elif from_currency == "PHP" and to_currency == "CNY":
-        PHP_to_CNY = round(conversion_rate["PHP"]["CNY"], 2)
-        print(f"Conversion:{PHP_to_CNY * amount}")
-
-    elif from_currency == "PHP" and to_currency == "GBP":
-        PHP_to_GBP = round(conversion_rate["PHP"]["GBP"], 2)
-        print(f"Conversion:{PHP_to_GBP * amount}")
-
-    elif from_currency == "PHP" and to_currency == "INR":
-        PHP_to_INR = round(conversion_rate["PHP"]["INR"], 2)
-        print(f"Conversion:{PHP_to_INR * amount}")
-
-    elif from_currency == "INR" and to_currency == "PHP":
-        INR_to_PHP = round(conversion_rate["INR"]["PHP"], 2)
-        print(f"Conversion:{INR_to_PHP * amount}")
-
-    elif from_currency == "INR" and to_currency == "CNY":
-        INR_to_CNY = round(conversion_rate["INR"]["CNY"], 2)
-        print(f"Conversion:{INR_to_CNY * amount}")
-
-    elif from_currency == "INR" and to_currency == "GBP":
-        INR_to_GBP = round(conversion_rate["INR"]["GBP"], 2)
-        print(f"Conversion:{INR_to_GBP * amount}")
-
-    return None
-print(currency_converter(300,'GBP', "CNY"))
-
-# Submit only this file currency_converter.py with the completed function.
-
-# Remove any additional code you may have added during development and testing.
+    return round(converted_amount, 2)
