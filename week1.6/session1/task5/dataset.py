@@ -33,6 +33,7 @@ class QuakeDataset:
 
         The new data replaces any existing data.
         """
+
         # Write code here to replace existing data with new earthquake data.
         # Use the value returned by the feed's reader() method as the
         # subject of a for loop.
@@ -42,18 +43,36 @@ class QuakeDataset:
         # each dictionary and convert them into the required types before
         # creating a Quake object and storing it in the list.
 
+        self.data.clear()
+
+        for info in self.feed.reader():
+            print(info)
+            #prints out as a dictionary
+            time = datetime.fromisoformat(info["time"])
+
+            lon = float(info["longitude"])
+            lat = float(info["latitude"])
+            depth = float(info["depth"])
+            mag = float(info["mag"])
+
+            self.data.append(Quake(time, lon, lat, depth, mag))
+
+
+
+
     def __len__(self):
         """
         Returns the size of this dataset.
         """
-        # Write code here that returns the number of quakes downloaded
-
+        return len(self.data)
+    
     def __str__(self):
         """
         Returns information on this dataset as a string.
         """
-        # Write code here to create and return a string representation
-        # (Include number of quakes and details of the feed that was used)
+
+        return f"(number of quakes:{len(self.data)},level:{self.level}, period:{self.period})"
+
 
     def mean_depth(self):
         """
@@ -69,8 +88,13 @@ class QuakeDataset:
         """
         Returns the mean magnitude of the quakes in this dataset.
         """
-        # Write code here that computes the mean magnitude of all the
-        # quakes currently in the dataset
+
+        if len(self.data) == 0:
+            raise QuakeDataset("dataset is empty")
+
+        total2 = sum(quake.magnitude for quake in self.data)
+        return total2 / len(self.data)
+        
 
     def shallowest_quake(self):
         """
@@ -89,5 +113,11 @@ class QuakeDataset:
         """
         Returns details of the strongest quake in this dataset.
         """
-        # Write code here that finds and returns the strongest quake
-        # (i.e., the one with the largest magnitude)
+        if len(self.data) == 0:
+            raise QuakeDatasetError("dataset is empty")
+
+        strongest = self.data[0]
+        for quake in self.data[1:]:
+            if quake.depth > strongest.depth:
+                strongest = quake
+        return strongest
