@@ -21,16 +21,25 @@ class Rectangle:
         self.height = height
 
     def is_square(self):
+        """
+        Checks to see if widths and heights are equivalent
+        """
         if self.width == self.height:
             return True
         else:
             return False
 
     def area(self):
+        """
+        Calculates area of the rectangle 
+        """
         area = self.width * self.height
         return area
 
     def perimeter(self):
+        """
+        Calculates perimeter of the rectangle
+        """
         perimeter = (self.width * 2) + (self.height *2)
         return perimeter 
 
