@@ -24,11 +24,16 @@ def test_add_invalid_type():
 
 
 def test_invalid_type_pence():
+    with pytest.raises(TypeError):
+        Money(1,5.0)
     # complete the test implementation for 
     # invalid type for pence
     
 
-def test_invalid_value_pence():
+def test_invalid_value_pence_negative():
+    with pytest.raises(ValueError):
+        Money(1,-1)
+    
     # complete the test implementation for 
     # invalid value for pence
     

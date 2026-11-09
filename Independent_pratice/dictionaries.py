@@ -62,20 +62,20 @@
 # print(f"{total} students scored 70 or above")
 
 # task 6 - nested dcitionaries 
-students = {
-    "Alex": {
-        "age": 19,
-        "mark": 85
-    },
-    "Sarah": {
-        "age": 20,
-        "mark": 92
-    },
-    "James": {
-        "age": 18,
-        "mark": 76
-    }
-}
+# students = {
+#     "Alex": {
+#         "age": 19,
+#         "mark": 85
+#     },
+#     "Sarah": {
+#         "age": 20,
+#         "mark": 92
+#     },
+#     "James": {
+#         "age": 18,
+#         "mark": 76
+#     }
+# }
 
 # # printing sarahs mark
 # print(students["Sarah"][ "mark"])
