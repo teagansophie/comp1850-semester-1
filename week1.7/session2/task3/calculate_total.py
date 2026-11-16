@@ -1,4 +1,5 @@
-# Week 1.7, Session 2: Task 3
+# Week 1.7, Session	python 
+
 
 def calculate_total(price, tax_rate):
     print("Calculating total...")

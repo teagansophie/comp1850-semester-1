@@ -101,3 +101,5 @@
 #         word_count[words] = 1
 
 # print(word_count)
+
+assert 2+2 == 5
