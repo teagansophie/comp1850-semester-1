@@ -3,7 +3,7 @@ import httpx
 import pandas as pd
 import matplotlib.pyplot as plt
 
-api_key="U6KXJTZC2E8VGH39PD7UMG4BZ"   # your API key
+api_key="Q2BVE22RU28DNQ5D7UKUUWG47"   # your API key
 
 city="Leeds"     # city location
 country="UK"     # country location
@@ -20,7 +20,10 @@ url = base + city + "," + country + "?key=" + api_key + "&" + elements
 response = httpx.get(url)
 
 # status code (should be checked)
-print(response.status_code)
+if response.status_code == 200:
+    print(response.status_code)
+else: 
+    print("status code not 200.")
 
 # json data
 data = response.json()
@@ -47,5 +50,6 @@ plt.show()
 
 # note that temperature is in Farenheit (F)
 # convert to Celcius before plotting 
+
 
 # using the documentation explore other data, eg. rainfall  
