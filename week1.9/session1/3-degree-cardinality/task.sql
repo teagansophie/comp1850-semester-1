@@ -9,6 +9,15 @@
 
 -- To see the attributes belonging to each table
 .schema customers
+--7
+.schema orders
+--3
+.schema drivers
 
 -- And to see a count of the total number of tuples
-SELECT COUNT(*) as Cardinality FROM customers; 
+SELECT COUNT(*) as Cardinality FROM customers;
+--180
+SELECT COUNT(*) as Cardinality FROM orders;
+--1300
+SELECT COUNT(*) as Cardinality FROM drivers;
+--18
